@@ -4,7 +4,6 @@ tempo = [0]*101
 amigos = []
 intervalo = 0
 for i in range(n):
-    print(tempo[:5])
     evento, valor = input().split()
     valor = int(valor)
     match evento:
