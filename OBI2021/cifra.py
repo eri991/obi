@@ -1,19 +1,14 @@
 palavra = input()
 vogais = "aeiou"
-consoantes = "bcdfghjklmnpqrstvwxyz"
+consoantes = "bcdfghjklmnpqrstvwxz"
 alfabeto = "abcdefghijklmnopqrstuvwxyz"
-indexes = []
-
-for i in alfabeto:
-    if i in vogais:
-        indexes.append(alfabeto.index(i))
-
+vogaisIndexes = [0,4,8,14,20]
 novaPalavra = ''
 for i in palavra:
     novaPalavra += i
     if i in consoantes:
         maisProxima = "a"
-        for x in indexes:
+        for x in vogaisIndexes:
             if abs(x-alfabeto.index(i)) < abs(alfabeto.index(maisProxima)-alfabeto.index(i)):
                 maisProxima = alfabeto[x]
         novaPalavra += maisProxima
