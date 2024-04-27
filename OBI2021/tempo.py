@@ -6,17 +6,16 @@ intervalo = 0
 for i in range(n):
     evento, valor = input().split()
     valor = int(valor)
-    match evento:
-        case "R":
-            if valor not in amigos:
-                amigos.append(valor)
-            vacuo[valor] = True
-            intervalo = 1
-        case "E":
-            vacuo[valor] = False
-            intervalo = 1
-        case "T":
-            intervalo = valor-1
+    if evento == "R":
+        if valor not in amigos:
+            amigos.append(valor)
+        vacuo[valor] = True
+        intervalo = 1
+    if evento == "E":
+        vacuo[valor] = False
+        intervalo = 1
+    if evento == "T":
+        intervalo = valor-1
     for i in range(len(vacuo)):
         if vacuo[i] == True:
             tempo[i] += intervalo
