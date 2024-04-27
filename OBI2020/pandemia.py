@@ -7,8 +7,6 @@ for reuniao in range(1, m+1):
         continue
     else:
         lista = lista[1:]
-        for infectado in infectados:
-            if infectado in lista:
-                for i in lista:
-                    infectados.append(i) if i not in infectados else ""
+        if not set(infectados).isdisjoint(lista):
+            infectados = list(set(infectados + lista))
 print(len(infectados))
